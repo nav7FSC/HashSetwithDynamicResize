@@ -19,9 +19,8 @@ public class HashSet {
      */
     @SuppressWarnings("unchecked")
     public HashSet() {
-        buckets = new ArrayList[4]; // Initialize with 4 buckets
+        buckets = new ArrayList[4];
         numElements = 0;
-        // Initialize each bucket with an ArrayList
         for (int i = 0; i < buckets.length; i++) {
             buckets[i] = new ArrayList<>();
         }
@@ -34,10 +33,10 @@ public class HashSet {
      * @param item the integer to add to the hash set
      */
     public void add(int item) {
-        if (!hasItem(item)) {  // Check if item is already in the set
-            int bucketIndex = item % buckets.length;  // Use mod operation to find the bucket
+        if (!hasItem(item)) {
+            int bucketIndex = item % buckets.length;
             buckets[bucketIndex].add(item);
-            numElements++;  // Increment the number of elements
+            numElements++;
         }
     }
 
@@ -79,8 +78,7 @@ public class HashSet {
      */
     @SuppressWarnings("unchecked")
     public void resize(int newSize) {
-        ArrayList<Integer>[] newBuckets = new ArrayList[newSize];  // Create new buckets
-        // Initialize each new bucket with an ArrayList
+        ArrayList<Integer>[] newBuckets = new ArrayList[newSize];
         for (int i = 0; i < newSize; i++) {
             newBuckets[i] = new ArrayList<>();
         }
@@ -91,7 +89,7 @@ public class HashSet {
                 newBuckets[newBucketIndex].add(item);
             }
         }
-        buckets = newBuckets;  // Replace old buckets with new ones
+        buckets = newBuckets;
     }
 
     /**
@@ -112,14 +110,17 @@ public class HashSet {
         myHashSet.show();
 
         // Check if certain items exist
-        System.out.println("Has 37? " + myHashSet.hasItem(37));  // true
-        System.out.println("Has 99? " + myHashSet.hasItem(99));  // false
+        System.out.println("Has 37? " + myHashSet.hasItem(37));
+        System.out.println("Has 99? " + myHashSet.hasItem(99));
 
-        // Display the load factor
-        System.out.println("Load Factor: " + myHashSet.loadFactor());
+        // Display the load factor before resizing
+        System.out.println("Load Factor before resizing: " + myHashSet.loadFactor());
 
         // Resize and show again
         myHashSet.resize(8);
         myHashSet.show();
+
+        // Display the load factor after resizing
+        System.out.println("Load Factor after resizing: " + myHashSet.loadFactor());
     }
 }
