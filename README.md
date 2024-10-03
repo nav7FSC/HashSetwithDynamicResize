@@ -31,22 +31,23 @@
 - `void resize(int newSize)`: Resizes the bucket array and rehashes existing elements.
 
 ## Output
-- Bucket 0: [10, 100]
-- Bucket 1: [22, 61]
-- Bucket 2: [49, 84]
-- Bucket 3: [37, 53, 72, 95]
-- Has 37? true
-- Has 99? false
-- Load Factor before resizing: 2.5
-- Bucket 0: [100, 10]
-- Bucket 1: [22, 61]
-- Bucket 2: [49, 84]
-- Bucket 3: [37, 53, 72, 95]
-- Bucket 4: []
-- Bucket 5: []
-- Bucket 6: []
-- Bucket 7: []
-- Load Factor after resizing: 1.25
+    HashSet contents:
+    Bucket 0: [4, 12]
+    Bucket 1: [5, 17]
+    Bucket 2: [10, 22, 6]
+    Bucket 3: [31, 19, 27]
+    Load factor before resizing: 2.5
+    Resized to 8 buckets.
+    HashSet contents after resizing:
+    Bucket 0: []
+    Bucket 1: [17]
+    Bucket 2: [10]
+    Bucket 3: [19, 27]
+    Bucket 4: [4, 12]
+    Bucket 5: [5]
+    Bucket 6: [22, 6]
+    Bucket 7: [31]
+    Load factor after resizing: 1.25
 
 ## Author
 
